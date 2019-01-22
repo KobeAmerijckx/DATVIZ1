@@ -1,9 +1,11 @@
 $(document).ready(function () {
+    //get audio data
     var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
     var audioElement = document.getElementById('audio');
     var audioSrc = audioCtx.createMediaElementSource(audioElement);
     var analyser = audioCtx.createAnalyser();
 
+    //analyse audio data - connect analyser
     audioSrc.connect(analyser);
     audioSrc.connect(audioCtx.destination);
 
@@ -12,7 +14,9 @@ $(document).ready(function () {
     renderFrame();
 
     function renderFrame() {
+        //repeat loop
         requestAnimationFrame(renderFrame);
+        //get data from analyser
         analyser.getByteFrequencyData(data);
         var margin = {
                 top: 50,
@@ -42,7 +46,9 @@ $(document).ready(function () {
             }
         });
         console.log(dataset)
+        //refresh svg
         $("svg").remove();
+        //draw svg with new data
         var svg = d3.select("body").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
