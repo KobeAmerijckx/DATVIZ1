@@ -1,0 +1,44 @@
+body {
+    background-color: black;
+  padding: 50px;
+  font-family: Arial;
+  font-size: 10px;
+    color: black;
+    overflow: hidden;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: black;
+  stroke: black;
+  stroke-width: 1.5px;
+}
+
+h1 {
+    color: #222;
+    font-size: 72pt;
+    position: absolute;
+    width: 75%;
+    text-align: center;
+    margin-left: -37.5%;
+    left: 50%;
+    top: 30%
+}
+
+h2 {
+    color: white;
+}
+
+.dot {
+    fill: white;
+}
